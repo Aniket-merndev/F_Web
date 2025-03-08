@@ -34,5 +34,6 @@ export const router = createBrowserRouter(
 
             <Route path="upload" element={<UploadFile />} />
         </Route>
-    )
+    ),
+    
 )
