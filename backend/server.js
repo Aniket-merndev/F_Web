@@ -40,20 +40,25 @@ const allowedOrigins = [
 //     credentials: true // If sending cookies or authorization headers
 // }));
 
+// app.use(cors({
+//   origin: (origin, callback) => {
+//     // Allow requests with no origin (like Postman or curl)
+//     if (!origin) return callback(null, true);
+    
+//     // Allow if the origin is in the allowed list
+//     if (allowedOrigins.includes(origin)) {
+//       return callback(null, true);
+//     }
+    
+//     // Otherwise, block the request
+//     return callback(new Error('Not allowed by CORS'));
+//   },
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   credentials: true
+// }));
+
 app.use(cors({
-  origin: (origin, callback) => {
-    // Allow requests with no origin (like Postman or curl)
-    if (!origin) return callback(null, true);
-    
-    // Allow if the origin is in the allowed list
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    }
-    
-    // Otherwise, block the request
-    return callback(new Error('Not allowed by CORS'));
-  },
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  origin: true, // This will allow all origins
   credentials: true
 }));
 
