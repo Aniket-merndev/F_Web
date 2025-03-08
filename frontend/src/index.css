@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jura:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: "Istok Web", sans-serif;
+}
+
+:root {
+    --background-color:#222436;
+    --background-color-offset:#2B315E;
+    --background-gradient: linear-gradient(to top, #222436, #2B315E);
+    --highlight-color: #00F227;
+    --highlight-hover-color: #01AC1C;
+    --highlight-gradient: linear-gradient(to bottom right, #00F227, #001AFF);
+    --contrast-color:#FFFFFF;
+    --contrast-color-offset:#F8F8F8;
+}
+
+[data-theme="light"] {
+    --background-color:#F8F8F8;
+    --background-color-offset:#D9D9D9;
+    --background-gradient: linear-gradient(to top, #F8F8F8, #D9D9D9);
+    --highlight-color: #F2CA00;
+    --highlight-hover-color: #cead06;
+    --highlight-gradient: linear-gradient(to bottom right, #F2CA00, #FF2B00);
+    --contrast-color:#000000;
+    --contrast-color-offset:#040404;
+}
+
+body{
+    color: var(--contrast-color); 
+}
+
+.transition-theme{
+    transition-duration: 500ms;
+    transition-property: background-color, color, border-color;   
+}
+
+.istok-web-regular {
+    font-family: "Istok Web", sans-serif;
+    font-weight: 400;
+    font-style: normal;    
+}
+  
+.istok-web-bold {
+    font-family: "Istok Web", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+  
+.istok-web-regular-italic {
+    font-family: "Istok Web", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+  
+.istok-web-bold-italic {
+    font-family: "Istok Web", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Narrow, light-colored scrollbar */
+.scrollbar-custom::-webkit-scrollbar {
+    width: 6px; /* Width of the scrollbar */
+    height: 2px; /* Height for horizontal scrollbar */
+  }
+  
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+    margin: 0 10px;
+  }
+  
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    background-color: #d1d5db; /* Slightly darker gray for the thumb */
+    border-radius: 10px;
+  }
+  
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background-color: #9ca3af; /* Darker gray when hovered */
+  }
+  
+  /* styles for flash messages */
+
+.ct-toast .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+  }
+  
+  .ct-toast .progress:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--highlight-color);
+  }
+  
+  .progress.active:before {
+    animation: progress 5s linear forwards;
+  }
+  
+  @keyframes progress {
+    100% {
+      right: 100%;
+    }
+  }
